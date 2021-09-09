@@ -12,7 +12,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: "Rodando docker-compose"
-        run: docker-compose -f docker-compose.prod.yaml up app db redis nginx
+        run: docker-compose -f docker-compose.prod.yaml up app db redis nginx -d
         env:
           GOOGLE_CLOUD_PROJECT_ID: $PROJECT_ID
           GOOGLE_CLOUD_KEY_FILE: service-account-storage.json
