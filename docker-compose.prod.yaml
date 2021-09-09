@@ -13,6 +13,8 @@ services:
         depends_on:
             - db
             - redis
+        args:
+            - USER=root
 
     nginx:
         build: .docker/nginx
