@@ -28,6 +28,10 @@ services:
         depends_on:
             - app
 
+    dockerize:
+        image: jwilder/dockerize
+        entrypoint: dockerize -wait tcp://app:9000 -timeout 120s
+
     db:
         build: ./.docker/mysql
         command: --innodb-use-native-aio=0
